@@ -6,6 +6,8 @@ const {databaseService} = require('./src/services/databaseService')
 const fs = require('fs')
 
 const app = express()
+
+app.use(cors())
 app.use(bodyParser.json())
 const PORT = process.env.PORT || 3000
 require('./src/routes/routes')(app, databaseService(), fs)
